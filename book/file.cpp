@@ -1,12 +1,37 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
+
 int main()
 {
-fstream f;
-f.open("x.txt",ios::out);
-f<<"hello wrld succsee \n";
-f<<"hello wrld succsesssss";
+    string ch;
+    getline(cin,ch);
+    fstream cget;
+    cget.open("sample.txt", ios::app);
+    if (!cget)
+    {
+        cout << "File creation failed";
+    }
+    else
+    {
+        cget << ch << endl;
+        cget.close();
+    }
 
-return 0;
+    fstream pget;
+    cget.open("sample.txt", ios::in);
+    if (!pget)
+    {
+        cout << "No such file";
+    }
+    else
+    {
+        while (getline(cget, ch))
+        {
+            cout << ch << endl;
+        }
+        pget.close();
+    }
+    return 0;
 }
