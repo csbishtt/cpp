@@ -6,7 +6,7 @@ public:
     int num1;
     int num2;
 
-    virtual void sh(int x, int y){};
+    virtual void sh(int x, int y)=0;
     void ch()
     {
         cout<<num1<<endl;
