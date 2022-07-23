@@ -6,12 +6,12 @@ public:
     int num1;
     int num2;
 
-    virtual void sh(int x, int y)=0;
+    virtual void sh(int x, int y) =0;
     void ch()
     {
-        cout<<num1<<endl;
-        cout<<num2<<endl;
-        cout<<"the sum is"<<endl;
+        cout << "Num 1 is : "<<num1 << endl;
+        cout << "Num 2 is : "<<num2 << endl;
+        cout << "the sum is : "  ;
     }
 };
 class b : public a
@@ -22,16 +22,15 @@ public:
     {
         num1 = x;
         num2 = y;
-        cout << num1 + num2<<endl;
+        ch();
+        cout << num1 + num2 << endl;
     }
 };
 
 int main()
 {
     b b1;
-
     b1.sh(3, 4);
-    b1.ch();
 
     return 0;
 }
