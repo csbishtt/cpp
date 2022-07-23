@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 class error
 {
@@ -48,7 +49,7 @@ void error::div()
         }
         else
         {
-            cout << a / b<<endl;
+            cout << a / b << endl;
         }
     }
     catch (const char *e)
@@ -61,8 +62,9 @@ int main()
     error e;
     int ch;
     int x, y;
+    char ans=y;
 
-    while (1)
+    while (ans==y)
     {
         cout << "*******MENU********" << endl;
         cout << "1 .enter data" << endl;
@@ -70,7 +72,6 @@ int main()
         cout << "3 . sum" << endl;
         cout << "4 . mul" << endl;
         cout << "5 . div" << endl;
-        cout << "6 . exit" << endl;
         cout << "enter your choice :";
         cin >> ch;
         switch (ch)
@@ -92,12 +93,16 @@ int main()
         case 5:
             e.div();
             break;
-        case 6:
-            exit(0);
-            break;
         default:
             cout << "enter correct choice:";
         }
+        cout << endl;
+        cout << "want to continue  y or n :";
+        cin >> ans;
+        // if(ans=='n')
+        // {
+        //    break;
+        // }
     }
     return 0;
 }
